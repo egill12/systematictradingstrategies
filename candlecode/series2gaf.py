@@ -13,7 +13,7 @@ def GenerateGAF(all_ts, window_size, rolling_length, fname, normalize_window_sca
 
     moving_window_size = int(window_size * normalize_window_scaling)
 
-
+    # np.floor rounds the decimals downwards
     n_rolling_data = int(np.floor((n - moving_window_size) / rolling_length))
 
 
@@ -22,7 +22,7 @@ def GenerateGAF(all_ts, window_size, rolling_length, fname, normalize_window_sca
 
     # Prices = []
 
-
+    # trange seems to just do the same as xrange but with more comentary and progress updates
     for i_rolling_data in trange(n_rolling_data, desc="Generating...", ascii=True):
 
 
@@ -49,16 +49,22 @@ def GenerateGAF(all_ts, window_size, rolling_length, fname, normalize_window_sca
 
         rescaled_ts = rescaled_ts[-int(window_size * (normalize_window_scaling - 1)):]
 
-
+        #for each window size we create a gam field?
         this_gam = np.zeros((window_size, window_size), float)
+        #Given an interval, values outside the interval are clipped to the interval edges.
+        # For example, if an interval of [0, 1] is specified, values smaller than 0 become 0, and values larger than 1 become 1.
         sin_ts = np.sqrt(np.clip(1 - rescaled_ts ** 2, 0, 1))
         if method == 'summation':
-
+            #Given two vectors, a = [a0, a1, ..., aM] and b = [b0, b1, ..., bN], the outer product [1] is:
+            # [[a0*b0  a0*b1 ... a0*bN ]
+            #  [a1*b0    .
+            #  [ ...          .
+            #  [aM*b0            aM*bN ]]
             this_gam = np.outer(rescaled_ts, rescaled_ts) - np.outer(sin_ts, sin_ts)
         if method == 'difference':
 
             this_gam = np.outer(sin_ts, rescaled_ts) - np.outer(rescaled_ts, sin_ts)
-
+        # for each of those window sizes, we then append each of those to the number of times we can cycle through the
         gramian_field.append(this_gam)
 
 
@@ -68,7 +74,7 @@ def GenerateGAF(all_ts, window_size, rolling_length, fname, normalize_window_sca
     np.array(gramian_field).dump('%s_gaf.pkl' % fname)
 
 
-    del gramian_field
+    return gramian_field
 
 
 def PlotHeatmap(all_img, save_dir='output_img'):
