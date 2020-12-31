@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="028b1b44-49c5-40be-a856-a9b8daf146bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_50_10_gaf.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/demo_50_10_gaf.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_process.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/image_process.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output_img/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/output_img/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/series2gaf.py" beforeDir="false" afterPath="$PROJECT_DIR$/series2gaf.py" afterDir="false" />
-    </list>
+    <list default="true" id="028b1b44-49c5-40be-a856-a9b8daf146bd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/image_process.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="2" />
+              <selected id="0" />
             </state>
           </provider>
         </entry>
@@ -242,7 +227,7 @@
     <entry file="file://$PROJECT_DIR$/image_process.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="2" />
+          <selected id="0" />
         </state>
       </provider>
     </entry>
