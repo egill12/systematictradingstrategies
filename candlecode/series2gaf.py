@@ -14,6 +14,7 @@ def GenerateGAF(all_ts, window_size, rolling_length, fname, normalize_window_sca
     moving_window_size = int(window_size * normalize_window_scaling)
 
     # np.floor rounds the decimals downwards
+    # finds the number of windows we can make with our rollign window size, which dictates the step szie before calculating another GAN.
     n_rolling_data = int(np.floor((n - moving_window_size) / rolling_length))
 
 
@@ -104,16 +105,24 @@ def PlotHeatmap(all_img, save_dir='output_img'):
 #
 if __name__ == '__main__':
     random_series = np.random.uniform(low=50.0, high=150.0, size=(200,))
+    from series2gaf import *
+    import pandas as pd
+    from matplotlib import pyplot as plt
 
+    EURUSD = pd.DataFrame(pd.read_csv(r"C:\Users\edgil\Documents\SysTrade\candlesticks\EURUSDOHLC.csv"))
+    EURUSD['Datetime'] = pd.to_datetime(EURUSD['Datetime'], format="%d/%m/%Y %H:%M")
+
+    testdata = EURUSD[:200]
+    testy = testdata[["Open", "High", "Low", "Close"]].values
     timeSeries = list(random_series)
     windowSize = 50
     rollingLength = 10
     fileName = 'demo_%02d_%02d' % (windowSize, rollingLength)
-    GenerateGAF(all_ts=timeSeries,
+    GenerateGAF(all_ts=testy,
                 window_size=windowSize,
                 rolling_length=rollingLength,
                 fname=fileName,
-                normalize_window_scaling=2.0)
+                normalize_window_scaling=1.0)
 
     ts_img = np.load('%s_gaf.pkl' % fileName)
     PlotHeatmap(ts_img)
